@@ -118,9 +118,9 @@
     <!---------->
 
     <!----80---
-    Should play a musical note on "focus"-->
+    ARIA label added-->
     <div id="group80">
-        <h3 tabindex="0" id="80" onfocus="newSound.play()">80</h3>
+        <h3 tabindex="0" id="80" role="changed node" aria-label="changed node">80</h3>
           <ul title="Information about node 80.">
             <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Move backward</a> <a onclick="javascript:self.showForwardDialog_80()" href="#">Move forward</a></li>
             <li>What changed: 80 was added as the left child of 40.</li>
@@ -165,11 +165,6 @@
     var dialog_backwards_80 = document.getElementById("dialog_backwards_80");
     var dialog_forward_80 = document.getElementById("dialog_forward_80");
     var dialog_forward_40 = document.getElementById("dialog_forward_40");
-    //-----------------------
-
-    // Adding the musical note sound
-    var newSound = new Audio();
-    newSound.src = "Highlight.m4a"
     //-----------------------
 
     // Code to hide irrelevant branches

@@ -68,9 +68,9 @@
   <main id="main-content"> 
 
     <!----80--
-    Should play a musical note on focus.-->
+    ARIA label added.-->
     <div id="group80">
-      <h1 tabindex="0" id="80" onfocus="newSound.play()">80 (root)</h1>
+      <h1 tabindex="0" id="80" role="changed node" aria-label="changed node">80 (root)</h1>
         <ul title="Information about node 80.">
           <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Move backward</a></li>
           <li>What changed: 80 swapped places with 60.</li>
@@ -109,9 +109,9 @@
     <!---------->
 
     <!----60--
-    Should play a musical note on focus.-->
+    ARIA label added-->
     <div id="group60">
-    <h2 tabindex="0" id="60" onfocus="newSound.play()">60</h2>
+    <h2 tabindex="0" id="60" role="changed node" aria-label="changed node">60</h2>
       <ul title="Information about node 60.">
           <li><a onclick="javascript:self.showBackwardDialog_60()" href="#">Move backward</a></li>
           <li>What changed: 60 swapped places with 80.</li>
@@ -157,11 +157,6 @@
     var dialog_backwards_80 = document.getElementById("dialog_backwards_80");
     var dialog_backwards_60 = document.getElementById("dialog_backwards_60");
      //-----------------------
-
-    // Adding the musical note sound
-    var newSound = new Audio();
-    newSound.src = "Highlight.m4a"
-    //-----------------------
 
     // Code to hide irrelevant branches
     function hideBranch() {

@@ -107,9 +107,9 @@
     <!---------->
 
     <!----80--
-    Should play a musical note on "focus"-->
+    ARIA label added-->
     <div id="group80">
-        <h2 tabindex="0" id="80" onfocus="newSound.play()">80</h2>
+        <h2 tabindex="0" id="80" role="changed node" aria-label="changed node">80</h2>
           <ul title="Information about node 80.">
             <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Move backward</a> <a onclick="javascript:self.showForwardDialog_80()" href="#">Move forward</a></li>
             <li>What changed: 80 swapped places with 40.</li>
@@ -120,9 +120,9 @@
     <!---------->
 
     <!---40---
-    Should play a musical note on "focus"-->
+    ARIA label added-->
     <div id="group40">
-      <h3 tabindex="0" id="40" onfocus="newSound.play()">40</h3>
+      <h3 tabindex="0" id="40" role="changed node" aria-label="changed node">40</h3>
         <ul title="Information about node 40.">
             <li><a onclick="javascript:self.showBackwardDialog_40()" href="#">Move backward</a> <a href="index4.html#40">Move forward</a></li>
             <li>What changed: 40 swapped places with 80.</li>
@@ -175,11 +175,6 @@
     var dialog_forward_80 = document.getElementById("dialog_forward_80");
     var dialog_backwards_40 = document.getElementById("dialog_backwards_40");
     var dialog_forward_60 = document.getElementById("dialog_forward_60");
-    //-----------------------
-
-    // Adding the musical note sound
-    var newSound = new Audio();
-    newSound.src = "Highlight.m4a"
     //-----------------------
   
     // Hiding irrelevent parts of the branch
