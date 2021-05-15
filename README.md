@@ -2,7 +2,7 @@
 
 Binary Heap Tree implementation with ARIA attribute
 
-#TODO
+# TODO
 
 1. Brandon suggests that we need to think about the tutorial for getting users accustomed to the layout. They of course know how to navigate web elements like lists, headers, and links but we need to tell them that the tree is organized as “headers for nodes…lists for …etc). And that the steps are different web pages. Laura has implemented this under "Framework," but it might need to be revised with more concise wording.
 
