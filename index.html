@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Step 1</title>
+
+  </head>
+  <body>
+    <!--------------------------------------------------------------HTML CONTENT-------------------------------------------------------------->
+
+    <!--Skip to content link:
+    This link is there so the user can skip to the main content, which is the body
+    of the tree.-->
+    <header>
+    <div id="skiptocontent"><a href="#main-content">Skip to main content</a></div>
+    </header>
+    <!---------->
+  
+    <!--Framework:
+    This part explains the elements of the webpage and their tree equivalents.
+    May need to be updated to be more concise.--> 
+    <aside title="Framework." id="framework">
+    <h1>Framework</h1>
+      <ul title="Framework.">
+        <li>Main content is the tree.</li>
+        <li>Headings are nodes.</li>
+        <li>Heading levels are the level of nodes on the tree.</li>
+        <li>Lists provide information about nodes.</li>
+        <li>Links provide the ability to move between steps, as well as the ability to jump between nodes.</li>
+        <li>Each step is a different webpage.</li>
+      </ul>
+    </aside>
+    <!---------->
+
+    <!--Summary:
+    This part gives a summary of how many nodes and levels are in the tree.----->
+    <aside title="Summary." id=summary>
+      <h1>Summary</h1>
+      <ul title="Summary.">
+        <li>Number of nodes: 5</li>
+        <li>Number of levels: 3</li>
+      </ul>
+    </aside>
+    <!---------->
+
+   <!--Main content: The Tree
+    To see a visual of this tree, visit https://visualgo.net/en/heap and type
+    "40,30,60,10,20" into Create. The change was adding node 80, so to see the
+    change type "80" into Insert.
+    Each node is a Heading with an unordered list underneath it, surrounded by a div.-->
+  <main id="main-content">
+
+  <!--60--->
+  <div id="group60">
+   <h1 tabindex="0" id="60">60 (root)</h1>
+     <ul title="Information about node 60.">
+      <li><a href="index2.html#60">Move forward</a></li>
+      <li>Children: <a href="#30">30</a> and <a href="#40">40</a></li>
+     </ul>
+  </div>
+  <!------->
+
+  <!--30--->
+  <div id="group30">
+    <h2 tabindex="0" id="30">30</h2>
+      <ul title="Information about node 30.">
+        <li><a href="index2.html#30">Move forward</a></li>
+        <li>Parent: <a href="#60">60</a></li>
+        <li>Children: <a href="#10">10</a> and <a href="#20">20</a></li>
+      </ul>
+  </div>
+  <!------->
+
+  <!--10 and 20----->
+  <div id="group10_20">
+    <h3 tabindex="0" id="10">10</h3>
+      <ul title="Information about node 10.">
+        <li><a href="index2.html#10">Move forward</a></li>
+        <li>Parent: <a href="#30">30</a></li>
+        <li>Children: none</li>
+      </ul>
+
+    <h3 tabindex="0" id="20">20</h3>
+      <ul title="Information about node 20.">
+        <li><a href="index2.html#20">Move forward</a></li>
+        <li>Parent: <a href="#30">30</a></li>
+        <li>Children: none</li>
+      </ul>
+  </div>
+  <!------------->
+
+<!--40--->
+<div id="group40">
+  <h2 tabindex="0" id="40">40</h2>
+    <ul title="Information about node 40.">
+      <li><a href="index2.html#40">Move forward</a></li>
+      <li>Parent: <a href="#60">60</a></li>
+      <li>Children: none</li>
+    </ul>
+</div>
+<!------->
+
+</main>
+<!-----End of main content------>
+
+<!-----------------------------------------------------------JAVASCRIPT SECTION------------------------------------------------------------------->
+
+  <script>
+    // For future javascript if needed. None at the moment.
+   </script>
+
+    <!--END CONTENT OF DOCUMENT-->
+  </body>
+</html> 
