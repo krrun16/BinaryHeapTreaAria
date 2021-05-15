@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Step 3</title>
+
+  </head>
+  <body>
+    <!--------------------------------------------------------------HTML CONTENT-------------------------------------------------------------->
+
+    <!--Skip to content link:
+    This link is there so the user can skip to the main content, which is the body
+    of the tree.-->
+    <header>
+    <div id="skiptocontent"><a href="#main-content">Skip to main content</a></div>
+    </header>
+    <!---------->
+  
+     <!--Framework:
+    This part explains the elements of the webpage and their tree equivalents.
+    May need to be updated to be more concise.--> 
+    <aside title="Framework." id="framework">
+      <h1>Framework</h1>
+        <ul title="Framework.">
+          <li>Main content is the tree.</li>
+          <li>Headings are nodes.</li>
+          <li>Heading levels are the level of nodes on the tree.</li>
+          <li>Lists provide information about nodes.</li>
+          <li>A checkbox hides irrelevant parts of the tree.</li>
+          <li>Links provide the ability to move between steps, as well as the ability to jump between nodes.</li>
+          <li>Each step is a different webpage.</li>
+        </ul>
+    </aside>
+    <!---------->
+
+    <!--Summary:
+    This part gives a summary of how many nodes and levels are in the tree.----->
+    <aside title="Summary." id=summary>
+      <h1>Summary</h1>
+      <ul title="Summary.">
+        <li>Number of nodes: 6</li>
+        <li>Number of levels: 3</li>
+      </ul>
+    </aside>
+    <!---------->
+
+     <!---What Changed:
+      This chunk of code describes what changed in the tree.---->
+    <aside title="What Changed." id="whatchanged">
+    <h1 id="log">Step 3: What Changed</h1>
+      <ul title="What Changed.">
+        <li>Node 80 switched places with Node 40 because 80 is greater than 40.</li>
+      </ul>
+
+      <!--Checkbox & Label for hiding irrelevant parts of the tree--->
+      <label for="hide">Select to hide irrelevant parts of the tree:</label>
+      <input type="checkbox" id="hide" name="hide" value="hide" onclick="self.hideBranch()">
+    <!---------->
+    
+    </aside>
+    <!---------->
+
+   <!--Main content: The Tree
+    To see a visual of this tree, visit https://visualgo.net/en/heap and type
+    "40,30,60,10,20" into Create. The change was adding node 80, so to see the
+    change type "80" into Insert.
+    Each node is a Heading with an unordered list underneath it, surrounded by a div.-->
+  <main id="main-content"> 
+
+    <!----60---->
+    <div id="group60">
+    <h1 tabindex="0" id="60">60 (root)</h1>
+      <ul title="Information about node 60.">
+        <li><a href="index2.html#60">Move backward</a> <a onclick="javascript:self.showForwardDialog_60()" href="#">Move forward</a></li>
+        <li>Children: <a href="#30">30</a> and <a href="#80">80</a></li>
+      </ul>
+    </div>
+    <!---------->
+
+    <!----30---->
+    <div id="group30">
+      <h2 tabindex="0" id="30">30</h2>
+        <ul title="Information about node 30.">
+          <li><a href="index2.html#30">Move backward</a> <a href="index4.html#30">Move forward</a></li>
+          <li>Parent: <a href="#60">60</a></li>
+          <li>Children: <a href="#10">10</a> and <a href="#20">20</a></li>
+        </ul>
+    </div>
+    <!---------->
+
+    <!---10 and 20---->
+    <div id="group10_20">
+      <h3 tabindex="0" id="10">10</h3>
+        <ul title="Information about node 10.">
+          <li><a href="index2.html#10">Move backward</a> <a href="index4.html#10">Move forward</a></li>
+          <li>Parent: <a href="#30">30</a></li>
+          <li>Children: none</li>
+        </ul>
+
+      <h3 tabindex="0" id="20">20</h3>
+        <ul title="Information about node 20.">
+          <li><a href="index2.html#20">Move backward</a> <a href="index4.html#20">Move forward</a></li>
+          <li>Parent: <a href="#30">30</a></li>
+          <li>Children: none</li>
+        </ul>
+    </div>
+    <!---------->
+
+    <!----80--
+    Should play a musical note on "focus"-->
+    <div id="group80">
+        <h2 tabindex="0" id="80" onfocus="newSound.play()">80</h2>
+          <ul title="Information about node 80.">
+            <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Move backward</a> <a onclick="javascript:self.showForwardDialog_80()" href="#">Move forward</a></li>
+            <li>What changed: 80 swapped places with 40.</li>
+            <li>Parent: <a href="#60">60</a></li>
+            <li>Children: <a href="#40">40</a></li>
+          </ul>
+    </div>
+    <!---------->
+
+    <!---40---
+    Should play a musical note on "focus"-->
+    <div id="group40">
+      <h3 tabindex="0" id="40" onfocus="newSound.play()">40</h3>
+        <ul title="Information about node 40.">
+            <li><a onclick="javascript:self.showBackwardDialog_40()" href="#">Move backward</a> <a href="index4.html#40">Move forward</a></li>
+            <li>What changed: 40 swapped places with 80.</li>
+            <li>Parent: <a href="#80">80</a></li>
+            <li>Children: none</li>
+        </ul>
+    </div>
+    <!---------->
+
+</main>
+<!--End of main content---->
+
+<!--Backwards dialog for 80 (switched places with 40)-->
+<dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_backwards_80" role="dialog" aria-labelledby="dialog">
+  Node 80 was in a different place in the previous step because it switched with node 40.
+  <a href="index2.html#80">Move to 80 at the previous step.</a>
+  <a href="index2.html#40">Move to 40 at the previous step.</a>
+  <a onclick="javascript:hideDialog()" href="#80">Stay on 80 at the current step.</a>
+</dialog>
+
+<!--Forward dialog for 80 (switched places with 40)-->
+<dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_forward_80" role="dialog" aria-labelledby="dialog">
+  Node 80 will switch places with node 60 in the next step.
+  <a href="index4.html#80">Move to 80 at the next step.</a>
+  <a href="index4.html#60">Move to 60 at the next step.</a>
+  <a onclick="javascript:hideDialog()" href="#80">Stay on 80 at the current step.</a>
+</dialog>
+
+<!--Backwards dialog for 40 (switched places with 80)-->
+<dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_backwards_40" role="dialog" aria-labelledby="dialog">
+  Node 40 was in a different place in the previous step because it switched with node 80.
+  <a href="index2.html#40">Move to 40 at the previous step.</a>
+  <a href="index2.html#80">Move to 80 at the previous step.</a>
+  <a onclick="javascript:hideDialog()" href="#40">Stay on 40 at the current step.</a>
+</dialog>
+
+<!--Forward dialog for 60 (will switch places with 80)-->
+<dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_forward_60" role="dialog" aria-labelledby="dialog">
+  Node 60 will switch places with node 80 in the next step.
+  <a href="index4.html#60">Move to 60 at the next step.</a>
+  <a href="index4.html#80">Move to 80 at the next step.</a>
+  <a onclick="javascript:hideDialog()" href="#60">Stay on 60 at the current step.</a>
+</dialog>
+
+<!-----------------------------------------------------------JAVASCRIPT SECTION------------------------------------------------------------------->
+
+  <script>
+    // Variables -- use these to identify the above dialog boxes
+    var dialog_backwards_80 = document.getElementById("dialog_backwards_80");
+    var dialog_forward_80 = document.getElementById("dialog_forward_80");
+    var dialog_backwards_40 = document.getElementById("dialog_backwards_40");
+    var dialog_forward_60 = document.getElementById("dialog_forward_60");
+    //-----------------------
+
+    // Adding the musical note sound
+    var newSound = new Audio();
+    newSound.src = "Highlight.m4a"
+    //-----------------------
+  
+    // Hiding irrelevent parts of the branch
+    function hideBranch() {
+      if (document.getElementById("hide").checked == true) {
+        document.getElementById("group30").style.visibility="hidden";
+        document.getElementById("group10_20").style.visibility="hidden";
+      }
+      else {
+        document.getElementById("group30").style.visibility="visible";
+        document.getElementById("group10_20").style.visibility="visible";
+      }
+    }
+    //-----------------------
+
+    // Function to hide dialog boxes
+    function hideDialog() {
+      dialog_backwards_80.close();
+      dialog_forward_80.close();
+      dialog_backwards_40.close();
+      dialog_forward_60.close();
+    }
+    //-----------------------
+    
+    // Functions to show dialog boxes
+    function showForwardDialog_80() {
+      dialog_forward_80.show();
+    }
+
+    function showForwardDialog_60() {
+      dialog_forward_60.show();
+    }
+
+    function showBackwardDialog_80() {
+      dialog_backwards_80.show();
+    }
+
+    function showBackwardDialog_40() {
+      dialog_backwards_40.show();
+    }
+    //-----------------------
+
+   </script>
+
+    <!--END CONTENT OF DOCUMENT-->
+  </body>
+</html> 
