@@ -1,7 +1,10 @@
 # Binary_Heap_Tree_ARIA
 
 Binary Heap Tree implementation with ARIA attribute
-Link to project: https://ljflores.git-pages.research.uiowa.edu/binary_heap_tree_aria (currently doesn't work)
+
+Link to project: https://ljflores.git-pages.research.uiowa.edu/binary_heap_tree_aria (currently doesn't work -- see the rest of README.md for details)
+
+The user should hear "changed node" when they focus on a changed node.
 
 # TODO
 
